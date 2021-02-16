@@ -8,7 +8,7 @@ function submitIssue(e) {
     const severity = getInputValue('issueSeverity');
     const assignedTo = getInputValue('issueAssignedTo');
     if (description === '' || assignedTo === '') {
-        displayError("Please enter description and Assign to properly.");
+        errorMessage.innerText = "Please enter description and Assign to properly.";
     } else {
         const id = Math.floor(Math.random() * 100000000) + '';
         const status = 'Open';
@@ -79,8 +79,4 @@ const fetchIssues = () => {
                 </div>`;
         }
     }
-}
-const displayError = error => {
-    const errorMessage = document.getElementById('error-message');
-    errorMessage.innerText = error;
 }
