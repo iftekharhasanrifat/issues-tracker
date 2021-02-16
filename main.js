@@ -8,7 +8,7 @@ function submitIssue(e) {
     const severity = getInputValue('issueSeverity');
     const assignedTo = getInputValue('issueAssignedTo');
     if (description === '' || assignedTo === '') {
-        errorMessage.innerText = "Please enter description and Assign to properly.";
+        alert("Please enter description and Assign to properly.");
     } else {
         const id = Math.floor(Math.random() * 100000000) + '';
         const status = 'Open';
@@ -24,7 +24,7 @@ function submitIssue(e) {
         document.getElementById('issueInputForm').reset();
         fetchIssues();
         e.preventDefault();
-        errorMessage.innerText = "";
+        // errorMessage.innerText = "";
     }
 
 }
